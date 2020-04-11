@@ -3,6 +3,7 @@ shopt -s extglob
 
 #Patterns for check valid email address
 first_Email_Pattern="^[a-z0-9]{1,}$"
+second_Email_Pattern="^[@]{1}[a-z0-9]{1,}$"
 
 #Function to check valid email address
 function emailValidation() {
@@ -17,3 +18,7 @@ function emailValidation() {
 }
 read -p "Enter the first part of email address: " email_Address
 emailValidation $email_Address $first_Email_Pattern
+
+read -p "Enter the email address after @ symbol: " email_Address
+emailValidation $email_Address $second_Email_Pattern
+
